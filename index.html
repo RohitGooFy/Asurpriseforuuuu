@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff4f5">
+<title>a little place for you ♡</title>
+<style>
+:root{--pink:#f4a6b8;--deep:#a94f6c;--ink:#573b49;--rose:#ffe4e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:radial-gradient(circle at 10% 5%,#ffe4eb 0,transparent 28rem),radial-gradient(circle at 95% 30%,#eee7ff 0,transparent 26rem),linear-gradient(160deg,#fff9f6,#fff0f3 55%,#fffaf8);overflow-x:hidden}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #b85e7b;outline-offset:3px}
+.wrap{width:min(760px,100%);margin:auto;padding:22px 17px 58px;position:relative}
+.topline{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#aa7588;margin:5px 0 28px}
+.sparkle{color:#d67f99}.hero{text-align:center;padding:18px 6px 25px;position:relative}.eyebrow{font-size:.85rem;color:#a96d83;letter-spacing:.04em}
+h1{font-family:Georgia,serif;font-weight:500;letter-spacing:-.04em;line-height:1.08;font-size:clamp(2.7rem,9vw,4.8rem);margin:14px 0 15px;color:#8e4e67}h1 em{font-weight:400;color:#d47f9a}
+.hero p{font-size:1.02rem;line-height:1.8;max-width:510px;margin:0 auto;color:#795867}.hero-heart{font-size:2.6rem;display:inline-block;animation:float 3.5s ease-in-out infinite;filter:drop-shadow(0 8px 10px #d98ca344);margin-bottom:10px}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-9px) rotate(5deg)}}
+.card{background:#ffffffb8;border:1px solid #fff;box-shadow:0 18px 50px #b66c8212;border-radius:28px;padding:24px;margin:18px 0;backdrop-filter:blur(12px)}
+.card h2{font:500 1.65rem Georgia,serif;color:#8e4e67;margin:0 0 9px}.card p{line-height:1.75;margin:8px 0;color:#795867}
+.mood-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.mood{border:1px solid #f3d7e0;background:#fff9fa;border-radius:17px;padding:15px 10px;color:#795867;transition:transform .2s,background .2s,border .2s}
+.mood:hover{transform:translateY(-2px);background:#fff0f4}.mood.selected{background:#ffe5eb;border-color:#d889a1;box-shadow:0 0 0 2px #f7d0db}
+.mood .emoji{display:block;font-size:1.5rem;margin-bottom:5px}.mood small{display:block;margin-top:4px;font-size:.78rem;color:#a17788}
+.action{border:0;background:#a95774;color:white;padding:13px 19px;border-radius:999px;box-shadow:0 8px 20px #a9577426;transition:transform .2s,filter .2s}.action:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.soft{border:1px solid #efd0da;background:#fff9fa;color:#9a5871;padding:12px 17px;border-radius:999px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hidden{display:none!important}
+.reveal{animation:reveal .55s ease both}@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.reply{margin-top:16px;padding:16px 17px;background:#fff0f4;border:1px solid #f7dbe3;border-radius:18px;line-height:1.8}
+.note{background:linear-gradient(140deg,#fff8f3,#fff0f5);border:1px solid #f4d9e1;border-radius:24px;padding:23px;position:relative;overflow:hidden}.note:after{content:"♡";position:absolute;font:5rem Georgia,serif;color:#f4d9e1;right:15px;bottom:-17px;opacity:.7;pointer-events:none}.note p{position:relative;z-index:1}
+.memory-list{display:grid;gap:10px;margin-top:17px}.memory{display:flex;gap:12px;align-items:flex-start;background:#fff9fb;border:1px solid #f7e3e9;border-radius:17px;padding:13px}.memory b{font-weight:600;color:#9d5d75}.memory span:first-child{font-size:1.35rem}
+.love-note{font:1.12rem/1.9 Georgia,serif;color:#765164;white-space:pre-line}.footer{text-align:center;color:#b17c91;font-size:.83rem;line-height:1.8;padding:24px 12px}.tiny{font-size:.83rem!important;color:#a37b8b!important}
+.orbit{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}.floaty{position:absolute;bottom:-40px;opacity:0;animation:rise linear forwards}
+@keyframes rise{0%{transform:translateY(0) rotate(0deg);opacity:0}12%{opacity:.65}85%{opacity:.5}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(min-width:600px){.wrap{padding-top:28px}.card{padding:30px}.mood-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="orbit" id="orbit" aria-hidden="true"></div>
+<main class="wrap">
+<div class="topline"><span class="sparkle">✦</span> a tiny corner of the internet <span class="sparkle">✦</span></div>
+<section class="hero"><div class="hero-heart">♡</div><div class="eyebrow">made with lots of love for my girl</div>
+<h1>hey, <em>my love</em></h1>
+<p>i made this little place for you for the days that feel a bit too much<br>you don't have to do anything here or feel any certain way<br>just stay for a little if you want to ♡</p></section>
+<section class="card"><h2>how's my girl feeling today?</h2><p>you can pick whatever feels closest. and if none of them fit that's okay too baby</p>
+<div class="mood-grid" id="moodGrid">
+<button class="mood" data-mood="heavy"><span class="emoji">🌧️</span>a little heavy<small>everything feels like a lot</small></button>
+<button class="mood" data-mood="anxious"><span class="emoji">🫧</span>anxious<small>my mind won't settle</small></button>
+<button class="mood" data-mood="sad"><span class="emoji">🥺</span>feeling low<small>i need some softness</small></button>
+<button class="mood" data-mood="okay"><span class="emoji">🌷</span>a little okay<small>just here for a bit</small></button></div><div id="moodReply" class="reply hidden" aria-live="polite"></div></section>
+<section class="card"><h2>a few things i want you to know</h2><p>not a big speech baby just some things i hope you remember</p><div class="memory-list">
+<div class="memory"><span>🧸</span><div><b>you don't have to pretend with me</b><br>you can tell me how you really feel or we can talk about something completely random</div></div>
+<div class="memory"><span>🌸</span><div><b>you don't need to fix everything today</b><br>it's okay to take things slowly and let today just be today</div></div>
+<div class="memory"><span>💗</span><div><b>you are loved on the hard days too</b><br>not just when you're smiling or when everything feels easy</div></div>
+<div class="memory"><span>🫶</span><div><b>you can tell me what you need</b><br>someone to listen someone to distract you or just a little company</div></div></div></section>
+<section class="card"><h2>pick a little something</h2><p>no pressure to do anything. just choose whatever sounds nice right now</p><div class="actions">
+<button class="action" data-comfort="hug">i need a hug 🫂</button><button class="soft" data-comfort="smile">make me smile 🌷</button><button class="soft" data-comfort="listen">stay with me 💌</button></div><div id="comfortReply" class="reply hidden" aria-live="polite"></div></section>
+<section class="card"><h2>things i love about you</h2><div class="note"><p>i love the little things that make you you</p><p>the way you make ordinary moments feel special and the way i can be silly with you and the little things you probably don't even notice about yourself</p><p>i love getting to know you more and more and i hope you get to see yourself with a little of the love that i see you with</p></div></section>
+<section class="card"><h2>a little note from me to you ♡</h2>
+<div class="love-note" id="loveNote">baby i wish i could be next to you right now and just hold you close for a while
+
+i know things have been really hard lately and i wish i could make it all feel lighter for you. i can't magically fix everything but i can listen and care and keep showing up for you
+
+you don't have to be okay all the time with me. you can have quiet days and messy days and days when you don't know what to say. you never have to pretend just to make me feel better
+
+even from far away i want to be someone you can turn to. if you want to talk i'll listen. if you want a distraction i'll be your silly boy. if you don't feel like talking we can just keep each other company
+
+i'm proud of you for doing your best even when it's difficult. please be kind to yourself baby and let the people helping you be there for you too
+
+i love you so much my girl. i wish i could give you a forehead kiss and the longest hug right now. until i can do that in person here's a little reminder that you matter so much to me and you're not alone in this ♡</div>
+<div class="actions"><button class="soft" id="moreNote">one more little reminder ♡</button><button class="soft" id="copyNote">copy this note</button></div><p class="tiny" id="copyStatus" aria-live="polite"></p></section>
+<section class="card"><h2>if i were there right now...</h2><p>i'd probably pull you into a hug first and ask if you want to talk or if you want me to distract you with something stupid. i'd let you steal my warmth and i'd stay close for as long as you wanted.</p><p>and if all you wanted was to sit together without saying much i'd be happy doing that too. you don't have to make the moment special for me. being with you is enough.</p><div class="actions"><button class="action" id="hugButton">send me a virtual hug ♡</button></div><div id="hugReply" class="reply hidden" aria-live="polite"></div></section>
+<section class="card"><h2>one last thing baby</h2><p>you mean so much to me. not because you always have to be happy or because you have everything figured out but because you're you. i love you on the easy days and the difficult ones too.</p><p>you don't need to reply to this or find the right words. i just wanted to leave a little bit of my love here for you to come back to whenever you want. ❤️</p><p style="text-align:center;font:1.5rem Georgia,serif;color:#b96c88;margin-top:22px">i love you, my girl ♡</p></section>
+<div class="footer">made for you and only you ♡<br><span id="footerLine">a little reminder from your boy</span></div>
+</main>
+<script>
+const moodReplies={
+heavy:"oh baby 🥺 you don't have to carry the whole day at once. let's just take things as they come. i'm here to listen and keep you company and you don't have to pretend with me ♡",
+anxious:"my love i'm sorry things feel so loud inside right now. you don't have to explain it perfectly or make it go away for my sake. i'm here with you and we can take this moment slowly together ♡",
+sad:"come here my girl 🫂 i wish i could wrap you in the safest hug and let you rest for a bit. you don't have to cheer up for me. i'm sending you so much love right now ♡",
+okay:"a little okay is okay baby 🌷 we don't have to turn it into anything else. i'm glad you came here for a little and i hope this gives you a tiny smile ♡"};
+const comfortReplies={
+hug:"biggest hug ever 🫂 imagine me pulling you close and kissing your forehead. no need to say anything. just a little moment where you get to feel loved ♡",
+smile:"tiny mission for my girl 🌷 find the nearest comfy thing and claim it as yours. now imagine me saying 'excuse me miss you're illegally cute and i'm reporting you to the cuddle police' 😭❤️",
+listen:"i'm here baby 💌 tell me the messy version or the short version or don't tell me yet. you can start wherever you want and i'll do my best to listen without trying to fix everything straight away ♡"};
+document.querySelectorAll(".mood").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".mood").forEach(b=>b.classList.remove("selected"));btn.classList.add("selected");const box=document.getElementById("moodReply");box.textContent=moodReplies[btn.dataset.mood];box.classList.remove("hidden");box.classList.add("reveal")}));
+document.querySelectorAll("[data-comfort]").forEach(btn=>btn.addEventListener("click",()=>{const box=document.getElementById("comfortReply");box.textContent=comfortReplies[btn.dataset.comfort];box.classList.remove("hidden");box.classList.add("reveal")}));
+const extraNotes=[
+"baby you don't have to earn rest or love. you deserve both even when the day hasn't gone the way you hoped ♡",
+"if today was hard i'm not disappointed in you. i'm just glad you're here and i hope you let yourself be cared for too 🫂",
+"i can't always be beside you in person but i can keep choosing to listen and show up for you in the ways i can. i love you ♡",
+"you can be a work in progress and still be someone so deeply loved. please remember that my girl ❤️"];
+document.getElementById("moreNote").addEventListener("click",()=>{const note=document.getElementById("loveNote");note.textContent=note.textContent+"\n\n"+extraNotes[Math.floor(Math.random()*extraNotes.length)]});
+document.getElementById("copyNote").addEventListener("click",async()=>{const text=document.getElementById("loveNote").textContent;const status=document.getElementById("copyStatus");try{await navigator.clipboard.writeText(text);status.textContent="copied with love ♡"}catch(e){const area=document.createElement("textarea");area.value=text;document.body.appendChild(area);area.select();document.execCommand("copy");area.remove();status.textContent="copied with love ♡"}});
+document.getElementById("hugButton").addEventListener("click",()=>{const box=document.getElementById("hugReply");box.textContent="🫂💗 hug delivered from me to you. imagine me holding you close for as long as you need. i'm here with you through this difficult moment. you matter to me baby ♡";box.classList.remove("hidden");box.classList.add("reveal");for(let i=0;i<18;i++)makeFloaty(["♡","💗","✿","♥"][Math.floor(Math.random()*4)])});
+function makeFloaty(symbol){const el=document.createElement("span");el.className="floaty";el.textContent=symbol;el.style.left=Math.random()*100+"%";el.style.fontSize=(15+Math.random()*18)+"px";el.style.animationDuration=(4+Math.random()*3)+"s";document.getElementById("orbit").appendChild(el);setTimeout(()=>el.remove(),7500)}
+setInterval(()=>{if(Math.random()>.45)makeFloaty(["♡","✿","♥"][Math.floor(Math.random()*3)])},1800);
+</script>
+</body>
+</html>
